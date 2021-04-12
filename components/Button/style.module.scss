@@ -1,0 +1,27 @@
+.button {
+  cursor: pointer;
+  padding: 10px 30px;
+  border: none;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.login {
+  background-color: #e50914;
+  margin: 15px 10px;
+}
+
+@media (min-width: 1000px) {
+  .login {
+    line-height: normal;
+    padding: 7px 17px;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}

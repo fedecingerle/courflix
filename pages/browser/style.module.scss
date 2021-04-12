@@ -1,0 +1,21 @@
+.container {
+  .backgroundContainer {
+    position: relative;
+    border-bottom: 8px solid #222;
+    padding: 50px 5%;
+    margin-bottom: 0;
+    background: 0 0;
+    color: #fff;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    margin: 0 auto;
+
+    .backgroundContainer {
+      padding: 70px 45px;
+      height: 700px;
+    }
+  }
+}

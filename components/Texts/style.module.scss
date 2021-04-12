@@ -1,0 +1,42 @@
+.containerLogin {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  color: white;
+  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .h2 {
+    font-weight: 200;
+    margin-top: 10px;
+  }
+}
+
+.centerText {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  .h2 {
+    font-weight: 200;
+  }
+}
+
+@media (min-width: 1000px) {
+  .containerLogin {
+    padding: 75px 0 20px;
+
+    .h1 {
+      font-size: 4rem;
+    }
+  }
+}
