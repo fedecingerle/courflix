@@ -45,6 +45,34 @@
   }
 }
 
+@media (min-width: 1000px) {
+  .browser {
+    margin: auto 50px;
+  }
+  .homeActive {
+    background-color: black;
+  }
+  .home {
+    padding: 0 60px;
+    background-color: rgba(0, 0, 0, 0.521);
+    .deskNav {
+      .firstNav {
+        margin: auto 50px;
+        width: 50%;
+      }
+      .secondNav {
+        display: block;
+        margin: auto 0;
+      }
+    }
+  }
+
+  .login {
+    margin: auto 50px;
+    background-color: transparent;
+  }
+}
+
 @media (min-width: 750px) {
   .home {
     background-color: rgba(0, 0, 0, 0.411);
@@ -79,33 +107,5 @@
     .mobNav {
       display: none;
     }
-  }
-}
-
-@media (min-width: 1000px) {
-  .browser {
-    margin: auto 50px;
-  }
-  .homeActive {
-    background-color: black;
-  }
-  .home {
-    padding: 0 60px;
-    background-color: rgba(0, 0, 0, 0.521);
-    .deskNav {
-      .firstNav {
-        margin: auto 50px;
-        width: 50%;
-      }
-      .secondNav {
-        display: block;
-        margin: auto 0;
-      }
-    }
-  }
-
-  .login {
-    margin: auto 50px;
-    background-color: transparent;
   }
 }

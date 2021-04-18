@@ -1,15 +1,27 @@
 .container {
   width: 100%;
   margin: 0;
-  padding-top: 10px;
   position: relative;
 
   .imageBackground {
     width: 100%;
-    position: absolute;
     z-index: 1;
     background-repeat: no-repeat;
     background-size: 100%;
     top: 0;
+  }
+
+  .backgroundGradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
   }
 }
