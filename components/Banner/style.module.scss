@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  margin: 0;
+  padding-top: 10px;
+  position: relative;
+
+  .imageBackground {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+  }
+}

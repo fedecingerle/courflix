@@ -1,7 +1,12 @@
-import styles from "./Banner.module.scss";
+import styles from "./style.module.scss";
 
-function Banner() {
-  return <div></div>;
+function Banner(props) {
+  const { image } = props;
+  return (
+    <div className={styles.container}>
+      <img className={styles.imageBackground} src={image} />
+    </div>
+  );
 }
 
 export default Banner;

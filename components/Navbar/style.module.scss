@@ -3,29 +3,105 @@
   justify-content: space-between;
   background-color: transparent;
   z-index: 100;
+  height: 3rem;
 }
 
 .browser {
   position: relative;
   background-color: transparent;
   padding-top: 0.5rem;
-  height: 3rem;
 }
 
 .login {
   position: relative;
   background-color: black;
   padding-top: 0.5rem;
-  height: 3rem;
 }
-.nav {
-  background-color: rgb(0, 0, 0);
-  height: 3rem;
+
+.home {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  position: absolute;
+  z-index: 11;
+  color: white;
+  .deskNav {
+    display: none;
+  }
+  .mobNav {
+    display: block;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    li {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .home {
+    background-color: rgba(0, 0, 0, 0.411);
+    .deskNav {
+      display: block;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .firstNav {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin: 0;
+        margin-left: 30px;
+        padding: 0;
+        align-items: center;
+        list-style: none;
+        li {
+          strong {
+            text-decoration: none;
+            list-style: none;
+          }
+          margin-right: 18px;
+          font-size: 14px;
+          display: flex;
+        }
+      }
+      .secondNav {
+        display: none;
+      }
+    }
+    .mobNav {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 1000px) {
   .browser {
     margin: auto 50px;
+  }
+  .homeActive {
+    background-color: black;
+  }
+  .home {
+    padding: 0 60px;
+    background-color: rgba(0, 0, 0, 0.521);
+    .deskNav {
+      .firstNav {
+        margin: auto 50px;
+        width: 50%;
+      }
+      .secondNav {
+        display: block;
+        margin: auto 0;
+      }
+    }
   }
 
   .login {

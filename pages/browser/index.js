@@ -3,7 +3,7 @@ import BackgroundBanner from "../../components/BackgroundBanner/index";
 import Texts from "../../components/Texts/index";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import styles from "./style.module.scss";
+import styles from "../style.module.scss";
 function Browser(props) {
   const router = useRouter();
   const { fromBrowser } = props;
