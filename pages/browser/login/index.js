@@ -38,7 +38,6 @@ function Login(props) {
                 </div>
                 <div className={styles.inputContainer}>
                   <input className={styles.input} placeholder="Contraseña" />
-                  {/* <input>Probando</input> */}
                 </div>
                 <Link href="/home">
                   <button className={styles.button}> Iniciar sesión</button>

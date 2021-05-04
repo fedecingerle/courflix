@@ -1,12 +1,16 @@
 import styles from "./style.module.scss";
 import Link from "next/link";
+
 function Button(props) {
-  const { text, className, href } = props;
+  const { text, className, href, icon } = props;
   return (
     <Link href={href} passHref>
-      <button className={`${styles.button} ${styles[className]}`}>
-        {text}
-      </button>
+      <div>
+        <button className={`${styles.button} ${styles[className]}`}>
+          <i className={`${icon} ${styles.icon}`} />
+          {text}
+        </button>
+      </div>
     </Link>
   );
 }
