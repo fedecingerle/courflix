@@ -4,15 +4,16 @@ import Button from "../Button/index";
 import Logo from "../Logo";
 
 function Navbar(props) {
-  const [scroll, setScroll] = useState(false);
+  const [showInput, setShowInput] = useState(false);
   const { fromBrowser, fromLogin } = props;
 
-  function changeNav() {
-    if (window.scrollY >= 1080) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
+  function handleShow() {
+    setShowInput(prevState => !prevState);
+  }
+
+  function handleChange(e) {
+    const { value } = e.target;
+    props.handleSearch(value);
   }
 
   return (
@@ -20,11 +21,9 @@ function Navbar(props) {
       {fromBrowser ? (
         <nav className={`${styles.navbar} ${styles.browser}`}>
           <Logo className="login" />
-          <Button
-            href="/browser/login"
-            text={"Iniciar sesión"}
-            className="login"
-          />
+          <a href="/browser/login">
+            <Button text={"Iniciar sesión"} className="login" />
+          </a>
         </nav>
       ) : fromLogin ? (
         <nav className={`${styles.navbar} ${styles.login}`}>
@@ -42,8 +41,20 @@ function Navbar(props) {
                 <li>Novedades Populares</li>
                 <li>Mi lista</li>
               </ul>
-              <div className={styles.secondNav}>
-                <input />
+              <div className={styles.searchBox}>
+                <i
+                  aria-hidden
+                  className={`fas fa-search ${styles.search}`}
+                  onClick={handleShow}
+                />
+                {showInput && (
+                  <input
+                    onChange={handleChange}
+                    type="text"
+                    className={styles.inputSearch}
+                    placeholder="Titulos"
+                  />
+                )}
               </div>
             </div>
             <ul className={styles.mobNav}>

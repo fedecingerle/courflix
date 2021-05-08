@@ -1,0 +1,175 @@
+.opacityContainer {
+  position: absolute;
+  height: 1000px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.filmContainer {
+  position: absolute;
+  z-index: 30;
+  min-height: auto;
+  width: 850px;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #191919;
+  z-index: 100;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
+  // background: linear-gradient(to bottom, transparent 5%, #181818);
+  // background-image: linear-gradient(to top, rgb(24, 24, 24), transparent 50%);
+
+  .backContainer {
+    height: 400px;
+    position: relative;
+    .background {
+      width: 100%;
+      height: 400px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background-size: cover;
+      display: block;
+      background-color: #ccc;
+      background-blend-mode: multiply;
+      transition: background-color 0.4s ease-in-out;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    .buttonContainer {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      .fa-times {
+        font-weight: 300;
+      }
+    }
+    .dataContainer {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 150px;
+      left: 50px;
+      img {
+        width: 400px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .container {
+    height: 100%;
+    padding: 3em;
+    .infoContainer {
+      display: flex;
+      .description {
+        width: 750px;
+        height: auto;
+        line-height: 27px;
+        font-size: 18px;
+      }
+      .filmSpecs {
+        width: 50%;
+      }
+    }
+    .episodeSelector {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 20px auto;
+      .episodes {
+        width: 100%;
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+    .chapterContainer {
+      display: flex;
+      height: 160px;
+      border-top: 1px solid #404040;
+
+      .key {
+        font-size: 1.5em;
+        color: #d2d2d2;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        flex: 0 0 7%;
+      }
+      .imgContainer {
+        width: 100px;
+        border-radius: 10px;
+        margin: auto;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          div {
+            opacity: 1;
+            transition: 1s all;
+          }
+        }
+        img {
+          position: relative;
+          border-radius: 7px;
+          width: 120px;
+          height: 80px;
+          margin: auto;
+        }
+        div {
+          transition: 1s all;
+          opacity: 0;
+          position: absolute;
+          top: 15%;
+          left: 0;
+          right: 0;
+          margin: auto 35px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: black;
+
+          i {
+            position: absolute;
+            top: 0;
+            margin: 15px 20px;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+      .chapter {
+        display: flex;
+        flex-direction: column;
+        margin: auto 30px;
+        .titleTime {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px;
+          .title {
+            color: #fff;
+            font-size: 1em;
+            font-weight: 700;
+          }
+          .time {
+            font-size: 1em;
+          }
+        }
+        .description {
+          padding: 0 1em 1em;
+          margin: 0;
+          color: #d2d2d2;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

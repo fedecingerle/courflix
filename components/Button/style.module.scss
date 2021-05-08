@@ -21,28 +21,46 @@
   background-color: white;
   color: black;
   z-index: 10;
-  min-width: 270px;
-  min-height: 60px;
+  min-width: 200px;
+  min-height: 42px;
   margin: 0 15px;
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 2.4rem;
+  padding: 0;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .info {
   background-color: #6d6d6eb3;
   z-index: 10;
-  min-width: 270px;
-  min-height: 60px;
+  min-width: 210px;
+  min-height: 42px;
   margin: 0 15px;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2.4rem;
+  padding: 0;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .icon {
   font-size: 20px;
   margin: auto 5px;
+}
+
+.close {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background-color: #181818;
+  padding: 0px;
+  font-weight: 300;
+  font-size: 10px;
 }
 
 @media (min-width: 1000px) {

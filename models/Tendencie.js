@@ -12,7 +12,16 @@ const tendencieSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true
-  }
+  },
+  logo: {
+    type: String,
+    required: true
+  },
+  backgroundImage: {
+    type: String,
+    required: true
+  },
+  episodes: []
 });
 
 module.exports =

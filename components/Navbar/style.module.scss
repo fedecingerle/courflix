@@ -45,34 +45,6 @@
   }
 }
 
-@media (min-width: 1000px) {
-  .browser {
-    margin: auto 50px;
-  }
-  .homeActive {
-    background-color: black;
-  }
-  .home {
-    padding: 0 60px;
-    background-color: rgba(0, 0, 0, 0.521);
-    .deskNav {
-      .firstNav {
-        margin: auto 50px;
-        width: 50%;
-      }
-      .secondNav {
-        display: block;
-        margin: auto 0;
-      }
-    }
-  }
-
-  .login {
-    margin: auto 50px;
-    background-color: transparent;
-  }
-}
-
 @media (min-width: 750px) {
   .home {
     background-color: rgba(0, 0, 0, 0.411);
@@ -95,17 +67,66 @@
             text-decoration: none;
             list-style: none;
           }
-          margin-right: 18px;
+          margin-right: 15px;
           font-size: 14px;
           display: flex;
         }
       }
-      .secondNav {
+      .searchBox {
         display: none;
       }
     }
     .mobNav {
       display: none;
     }
+  }
+}
+
+@media (min-width: 1000px) {
+  .browser {
+    margin: auto 50px;
+  }
+  .homeActive {
+    background-color: black;
+  }
+  .home {
+    padding: 0 60px;
+    background-color: rgba(0, 0, 0, 0.521);
+    .deskNav {
+      .firstNav {
+        margin: auto 50px;
+        width: 50%;
+      }
+      .searchBox {
+        display: block;
+        width: 250px;
+        margin: auto 0;
+        text-align: right;
+        .search {
+          text-align: right;
+          bottom: px;
+          color: white;
+          z-index: 10;
+          cursor: pointer;
+          transition: ease transform 1s;
+          transition-delay: 50ms;
+        }
+        .inputSearch {
+          width: 200px;
+          color: white;
+          height: 25px;
+          margin: 0 6px;
+          outline: none;
+          background: rgba(0, 0, 0, 0.85);
+          border: solid 1px rgba(255, 255, 255, 0.85);
+          transition: ease width 1s, ease opacity 1s;
+        }
+      }
+    }
+  }
+
+  .login {
+    margin: auto 50px;
+    background-color: transparent;
   }
 }

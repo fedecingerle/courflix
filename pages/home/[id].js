@@ -3,12 +3,15 @@ import Navbar from "../../components/Navbar";
 import Banner from "../../components/Banner";
 import Texts from "../../components/Texts";
 import Carousels from "../../components/Carousels";
+import Chapters from "../../components/Chapters";
 import { useState } from "react";
 import { ToggleEpisodesProvider } from "../../context/ToggleEpisodes";
 
-function Home({ tendencie, original }) {
-  const [searchParam, setSearchParam] = useState("");
+function Films({ film, tendencie, original }) {
+  const { data } = film;
+  const { backgroundImage, description, logo, episodes } = data;
   const [toggle, setToggle] = useState(false);
+  const [searchParam, setSearchParam] = useState("");
 
   function handleSearch(searchParam) {
     setSearchParam(searchParam);
@@ -16,6 +19,7 @@ function Home({ tendencie, original }) {
 
   function handleToggle() {
     setToggle(prevState => !prevState);
+    console.log(toggle);
   }
 
   const toggleEpisodesContext = {
@@ -30,12 +34,9 @@ function Home({ tendencie, original }) {
         <link rel="shortcut icon" href="../icon.png" />
       </Head>
       <Navbar handleSearch={serchParam => handleSearch(serchParam)} />
-      <Banner image="https://occ-0-2290-185.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABV-rCYNzkgERMeGM835iSREfkxH0B41imaPjykfBrwuZ0RwdrXM5yO5MFUrXLRPymvrOvw28KtW7XL4hOZN6TbuZxjgZ.webp?r=b26" />
-      <Texts
-        className="banner"
-        image="https://occ-0-2290-185.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABQisxXlJxoZPs1y6VVEQuTx7iwXMUDRp1NcS7LQRkxi86BOEyQ1wU_blu3ikPUg9X1TlGTaNNgMZZERkDa6Y2qb-m0sIGuW-6WI.webp?r=b17"
-        subtitle="Son hackers talentosos y no quieren quebrantar la ley. Ellos quieren dejar su huella, pero hacerlo tendrá consecuencias"
-      />
+      <Banner image={backgroundImage} />
+      {toggle && <Chapters episodes={episodes} data={data} />}
+      <Texts className="banner" image={logo} subtitle={description} />
       <Carousels
         filter={searchParam}
         tendencie={tendencie}
@@ -45,19 +46,25 @@ function Home({ tendencie, original }) {
   );
 }
 
-export async function getServerSideProps() {
+export default Films;
+
+export async function getServerSideProps({ params }) {
+  const { id } = params;
+  const filmsTendencie = await fetch(
+    `http://localhost:3000/api/tendencie/${id}`
+  );
+  const filmsJson = await filmsTendencie.json();
+
   const dataTendencie = await fetch(`http://localhost:3000/api/tendencie`);
   const jsonTendencie = await dataTendencie.json();
 
   const dataOriginal = await fetch(`http://localhost:3000/api/original`);
   const jsonOriginal = await dataOriginal.json();
-
   return {
     props: {
+      film: filmsJson,
       tendencie: jsonTendencie,
       original: jsonOriginal
-    }
+    } // will be passed to the page component as props
   };
 }
-
-export default Home;
