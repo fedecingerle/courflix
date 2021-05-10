@@ -9,10 +9,6 @@ function Browser(props) {
   const { fromBrowser } = props;
   return (
     <>
-      <Head>
-        <title>Courflix</title>
-        <link rel="shortcut icon" href="../icon.png" />
-      </Head>
       <Navbar fromBrowser={router.pathname == "/browser"} />
       <div className={styles.container}>
         <div className={styles.backgroundContainer}>

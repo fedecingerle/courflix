@@ -11,10 +11,6 @@ function Login(props) {
 
   return (
     <>
-      <Head>
-        <title>Courflix</title>
-        <link rel="shortcut icon" href="../icon.png" />
-      </Head>
       <Navbar fromLogin={router.pathname == "/browser/login"} />
       <div className={styles.container}>
         <div className={styles.backgroundContainer}>

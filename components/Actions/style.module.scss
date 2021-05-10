@@ -1,4 +1,26 @@
 .actionsContainer {
   display: flex;
-  width: 0;
+  justify-content: center;
+  .plusInfoContainer {
+    display: none;
+  }
+  .infoContainer {
+    display: block;
+  }
+}
+
+@media (min-width: 700px) {
+  .actionsContainer {
+    display: flex;
+    justify-content: left;
+    .plusInfoContainer {
+      display: block;
+    }
+    .infoContainer {
+      display: none;
+    }
+    .listContainer {
+      display: none;
+    }
+  }
 }

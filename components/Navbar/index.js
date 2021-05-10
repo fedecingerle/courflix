@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./style.module.scss";
 import Button from "../Button/index";
 import Logo from "../Logo";
+import Link from "next/link";
 
 function Navbar(props) {
   const [showInput, setShowInput] = useState(false);
@@ -32,14 +33,24 @@ function Navbar(props) {
       ) : (
         <>
           <nav className={`${styles.navbar} ${styles.home}`}>
-            <Logo className="home" />
+            <a href={"/home"} style={{ margin: "auto" }}>
+              <Logo className="home" />
+            </a>
             <div className={styles.deskNav}>
               <ul className={styles.firstNav}>
-                <li>Inicio</li>
-                <li>Series</li>
-                <li>Peliculas</li>
-                <li>Novedades Populares</li>
-                <li>Mi lista</li>
+                <Link href={"/home"}>
+                  <li>Inicio</li>
+                </Link>
+                <Link href={"/home/series"}>
+                  <li>Series</li>
+                </Link>
+                <Link href={"/home/films"}>
+                  <li>Peliculas</li>
+                </Link>
+                <li>Tendencias</li>
+                <Link href={"/home/myList"}>
+                  <li>Mi lista</li>
+                </Link>
               </ul>
               <div className={styles.searchBox}>
                 <i

@@ -32,7 +32,35 @@
 }
 
 .banner {
-  display: none;
+  position: absolute;
+  width: 90%;
+  z-index: 10;
+  margin: 0 auto;
+  top: 20%;
+  left: 0;
+  right: 0;
+
+  img {
+    width: 220px;
+    margin: 0 60px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  h2 {
+    display: none;
+  }
+}
+
+@media (min-width: 750px) {
+  .banner {
+    margin: 0;
+    top: 15%;
+
+    img {
+      margin: 0 20px;
+    }
+  }
 }
 
 @media (min-width: 1000px) {
@@ -47,12 +75,15 @@
     width: 50%;
     color: white;
     display: block;
-    position: absolute;
-    z-index: 2;
     top: 125px;
     margin: 0 30px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    img {
+      width: auto;
+      margin: 0 15px;
+    }
     h2 {
+      display: block;
       width: 680px;
       margin: 16.8px 16.8px;
       color: #fff;

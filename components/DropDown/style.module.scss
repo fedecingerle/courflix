@@ -2,13 +2,15 @@
   width: 300px;
   margin: 0;
   user-select: none;
+  z-index: 10;
   .filmSeason {
-    width: 200px;
+    width: 165px;
     margin: 0;
     flex-direction: column;
     font-size: 1.5em;
     background-color: rgb(36, 36, 36);
-    padding: 0.5em 1em;
+    padding: 5px;
+    text-align: center;
     color: white;
     cursor: pointer;
     border: 0.1em solid rgb(77, 77, 77);
@@ -19,7 +21,7 @@
     display: none;
     position: absolute;
     text-align: center;
-    right: 50px;
+    right: 10px;
     width: 280px;
     font-size: 1.5em;
     padding: 0;
@@ -43,6 +45,18 @@
 
     &.visible {
       display: block;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .container {
+    .filmSeason {
+      width: 200px;
+      padding: 0.5em 1em;
+    }
+    .seasons {
+      right: 50px;
     }
   }
 }

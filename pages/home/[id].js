@@ -29,10 +29,6 @@ function Films({ film, tendencie, original }) {
 
   return (
     <ToggleEpisodesProvider value={toggleEpisodesContext}>
-      <Head>
-        <title>Courflix</title>
-        <link rel="shortcut icon" href="../icon.png" />
-      </Head>
       <Navbar handleSearch={serchParam => handleSearch(serchParam)} />
       <Banner image={backgroundImage} />
       {toggle && <Chapters episodes={episodes} data={data} />}

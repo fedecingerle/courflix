@@ -25,10 +25,6 @@ function Home({ tendencie, original }) {
 
   return (
     <ToggleEpisodesProvider value={toggleEpisodesContext}>
-      <Head>
-        <title>Courflix</title>
-        <link rel="shortcut icon" href="../icon.png" />
-      </Head>
       <Navbar handleSearch={serchParam => handleSearch(serchParam)} />
       <Banner image="https://occ-0-2290-185.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABV-rCYNzkgERMeGM835iSREfkxH0B41imaPjykfBrwuZ0RwdrXM5yO5MFUrXLRPymvrOvw28KtW7XL4hOZN6TbuZxjgZ.webp?r=b26" />
       <Texts
@@ -45,7 +41,7 @@ function Home({ tendencie, original }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataTendencie = await fetch(`http://localhost:3000/api/tendencie`);
   const jsonTendencie = await dataTendencie.json();
 

@@ -1,37 +1,17 @@
 .carouselContainer {
   background: linear-gradient(to top, #151515 56%, black, transparent);
-  top: -15rem;
+  top: -5rem;
   position: relative;
   color: white;
-  padding: 30px 50px;
-
-  .filmContainer {
-    width: 255px !important;
-    padding: 50px 0;
-    margin: auto;
-    text-align: center;
-    cursor: pointer;
-
-    transition: max-width 1s, opacity 1s, transform 750ms,
-      -webkit-transform 750ms, -moz-transform 750ms, -o-transform 750ms;
-    transition-property: max-width, opacity, transform, -webkit-transform,
-      -moz-transform, -o-transform;
-    transition-duration: 1s, 1s, 750ms, 750ms, 750ms, 750ms;
-    transition-timing-function: ease, ease, ease, ease, ease, ease;
-    transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
-
-    &:hover {
-      padding: 5px 0;
+  padding: 30px 25px;
+  .slider {
+    text-align: "center";
+    .filmContainer {
       width: 255px !important;
-      height: 220px;
-      background-color: #151515;
-      position: relative;
-      z-index: 30;
-      border: 1px solid transparent;
-      border-radius: 10px;
-      box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
-      transform: scale(1.1);
-
+      padding: 0px 0;
+      margin: auto;
+      text-align: center;
+      cursor: pointer;
       transition: max-width 1s, opacity 1s, transform 750ms,
         -webkit-transform 750ms, -moz-transform 750ms, -o-transform 750ms;
       transition-property: max-width, opacity, transform, -webkit-transform,
@@ -40,67 +20,111 @@
       transition-timing-function: ease, ease, ease, ease, ease, ease;
       transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
 
+      // &:hover {
+      //   padding: 5px 0;
+      //   width: 255px !important;
+      //   height: 220px;
+      //   background-color: #151515;
+      //   position: relative;
+      //   z-index: 30;
+      //   border: 1px solid transparent;
+      //   border-radius: 10px;
+      //   box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
+      //   transform: scale(1.1);
+      //   transition: max-width 1s, opacity 1s, transform 750ms,
+      //     -webkit-transform 750ms, -moz-transform 750ms, -o-transform 750ms;
+      //   transition-property: max-width, opacity, transform, -webkit-transform,
+      //     -moz-transform, -o-transform;
+      //   transition-duration: 1s, 1s, 750ms, 750ms, 750ms, 750ms;
+      //   transition-timing-function: ease, ease, ease, ease, ease, ease;
+      //   transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+
+      //   .actions {
+      //     display: block;
+      //   }
+      // }
+
+      .filmPhoto {
+        position: relative;
+        .photo {
+          width: 254px;
+          height: 145px;
+          border-radius: 10px;
+          background-size: cover;
+          display: block;
+          background-color: #ccc;
+          background-blend-mode: multiply;
+          transition: background-color 0.4s ease-in-out;
+          &:hover {
+            background-color: #fff;
+          }
+        }
+      }
       .actions {
-        display: block;
+        display: none;
       }
     }
 
-    .filmPhoto {
+    .bigSlides {
+      height: 100%;
+      width: 95%;
+      cursor: pointer;
       position: relative;
-      .photo {
-        width: 254px;
-        height: 145px;
-        background-size: cover;
-        display: block;
+      &:hover {
+        .overlay {
+          opacity: 0.5;
+        }
+        .actions {
+          opacity: 1;
+        }
+      }
+      .image {
+        width: 100%;
+        height: 100%;
         background-color: #ccc;
-        background-blend-mode: multiply;
-        transition: background-color 0.4s ease-in-out;
-        &:hover {
-          background-color: #fff;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #151515;
+        z-index: 2;
+        opacity: 0;
+      }
+      .actions {
+        position: absolute;
+        z-index: 3;
+        top: 85%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .carouselContainer {
+    top: -6rem;
+    .slider {
+      .filmContainer {
+        width: 255px !important;
+        padding: 0px 0;
+        .filmPhoto {
+          .photo {
+            border-radius: 0;
+          }
         }
       }
     }
-    .actions {
-      display: none;
-    }
   }
+}
 
-  .bigSlides {
-    height: 100%;
-    width: 95%;
-    cursor: pointer;
-    position: relative;
-    &:hover {
-      .overlay {
-        opacity: 0.5;
-      }
-      .actions {
-        opacity: 1;
-      }
-    }
-    .image {
-      width: 100%;
-      height: 100%;
-      background-color: #ccc;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #151515;
-      z-index: 2;
-      opacity: 0;
-    }
-    .actions {
-      position: absolute;
-      z-index: 3;
-      top: 85%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-    }
+@media (min-width: 1200px) {
+  .carouselContainer {
+    top: -15rem;
   }
 }

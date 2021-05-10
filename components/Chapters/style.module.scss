@@ -1,6 +1,6 @@
 .opacityContainer {
   position: absolute;
-  height: 1000px;
+  height: 180%;
   width: 100%;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   position: absolute;
   z-index: 30;
   min-height: auto;
-  width: 850px;
+  width: 100%;
   top: 100px;
   left: 0;
   right: 0;
@@ -25,7 +25,6 @@
   box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
   // background: linear-gradient(to bottom, transparent 5%, #181818);
   // background-image: linear-gradient(to top, rgb(24, 24, 24), transparent 50%);
-
   .backContainer {
     height: 400px;
     position: relative;
@@ -36,6 +35,7 @@
       border-top-right-radius: 15px;
       background-size: cover;
       display: block;
+      background-position: center;
       background-color: #ccc;
       background-blend-mode: multiply;
       transition: background-color 0.4s ease-in-out;
@@ -57,9 +57,10 @@
       display: flex;
       flex-direction: column;
       top: 150px;
-      left: 50px;
+      left: 20px;
       img {
-        width: 400px;
+        width: 300px;
+        margin-left: 10px;
         margin-bottom: 30px;
       }
     }
@@ -67,7 +68,7 @@
 
   .container {
     height: 100%;
-    padding: 3em;
+    padding: 10px;
     .infoContainer {
       display: flex;
       .description {
@@ -93,21 +94,14 @@
     }
     .chapterContainer {
       display: flex;
+      flex-direction: column;
       height: 160px;
       border-top: 1px solid #404040;
 
-      .key {
-        font-size: 1.5em;
-        color: #d2d2d2;
-        display: flex;
-        justify-content: center;
-        margin: auto;
-        flex: 0 0 7%;
-      }
       .imgContainer {
-        width: 100px;
+        margin-top: 10px;
         border-radius: 10px;
-        margin: auto;
+        display: flex;
         position: relative;
         cursor: pointer;
         &:hover {
@@ -116,19 +110,42 @@
             transition: 1s all;
           }
         }
+
         img {
           position: relative;
           border-radius: 7px;
           width: 120px;
           height: 80px;
-          margin: auto;
         }
-        div {
+
+        .titleTime {
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 8px;
+          width: 250px;
+          .title {
+            color: #fff;
+            font-size: 1em;
+            font-weight: 700;
+          }
+          .time {
+            font-size: 1em;
+          }
+        }
+        .key {
+          font-size: 1.5em;
+          color: #d2d2d2;
+          display: flex;
+          justify-content: center;
+          margin: auto 10px;
+        }
+        .iconContainer {
           transition: 1s all;
           opacity: 0;
           position: absolute;
           top: 15%;
-          left: 0;
+          left: 9%;
           right: 0;
           margin: auto 35px;
           width: 50px;
@@ -148,11 +165,12 @@
       .chapter {
         display: flex;
         flex-direction: column;
-        margin: auto 30px;
+        margin: auto 10px;
         .titleTime {
           display: flex;
           justify-content: space-between;
           padding: 8px;
+          display: none;
           .title {
             color: #fff;
             font-size: 1em;
@@ -163,11 +181,167 @@
           }
         }
         .description {
-          padding: 0 1em 1em;
+          padding: 0;
           margin: 0;
           color: #d2d2d2;
-          font-size: 14px;
+          font-size: 12px;
           line-height: 20px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 750px) {
+  .filmContainer {
+    width: 650px;
+    .backContainer {
+      .background {
+        background-size: cover;
+        display: block;
+      }
+      .dataContainer {
+        img {
+          width: 400px;
+        }
+      }
+    }
+
+    .container {
+      height: 100%;
+      padding: 3em;
+      .infoContainer {
+        display: flex;
+        .description {
+          width: 750px;
+          height: auto;
+          line-height: 27px;
+          font-size: 18px;
+        }
+        .filmSpecs {
+          width: 50%;
+        }
+      }
+      .episodeSelector {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 20px auto;
+        .episodes {
+          width: 100%;
+          font-weight: 700;
+          font-size: 24px;
+        }
+      }
+      .chapterContainer {
+        display: flex;
+        flex-direction: row;
+        height: 160px;
+        border-top: 1px solid #404040;
+
+        .imgContainer {
+          width: 300px;
+          border-radius: 10px;
+          margin: auto;
+          display: flex;
+          position: relative;
+          cursor: pointer;
+          &:hover {
+            div {
+              opacity: 1;
+              transition: 1s all;
+            }
+          }
+
+          img {
+            position: relative;
+            border-radius: 7px;
+            width: 120px;
+            height: 80px;
+            margin: auto;
+          }
+
+          .key {
+            font-size: 1.5em;
+            color: #d2d2d2;
+            display: flex;
+            justify-content: center;
+            flex: 0 0 7%;
+          }
+          .titleTime {
+            display: none;
+          }
+          .iconContainer {
+            transition: 1s all;
+            opacity: 0;
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            right: 0;
+            margin: auto 35px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+
+            i {
+              position: absolute;
+              top: 0;
+              margin: 15px 20px;
+              left: 0;
+              right: 0;
+            }
+          }
+        }
+        .chapter {
+          display: flex;
+          flex-direction: column;
+          margin: auto 30px;
+          .titleTime {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            .title {
+              color: #fff;
+              font-size: 1em;
+              font-weight: 700;
+            }
+            .time {
+              font-size: 1em;
+            }
+          }
+          .description {
+            padding: 0 1em 1em;
+            margin: 0;
+            color: #d2d2d2;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .filmContainer {
+    width: 850px;
+
+    .backContainer {
+      .dataContainer {
+        top: 150px;
+        left: 50px;
+        img {
+          width: 400px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .container {
+      .chapterContainer {
+        .imgContainer {
+          .iconContainer {
+            left: 19%;
+          }
         }
       }
     }

@@ -28,7 +28,14 @@ function Chapters(props) {
           </div>
           <div className={styles.dataContainer}>
             <img src={logo} />
-            <Button text="Reproducir" icon="fa fa-play" className="play" />
+            <div style={{ width: "150px" }}>
+              <Button
+                text="Reproducir"
+                icon="fa fa-play"
+                className="play"
+                iconClass="iconPlay"
+              />
+            </div>
           </div>
         </div>
 
@@ -53,10 +60,14 @@ function Chapters(props) {
                         : { backgroundColor: "#191919" }
                     }
                   >
-                    <div className={styles.key}>{key + 1}</div>
                     <div className={styles.imgContainer}>
+                      <div className={styles.key}>{key + 1}</div>
                       <img src={chapters.image} />
-                      <div>
+                      <div className={styles.titleTime}>
+                        <div className={styles.title}>{chapters.title}</div>
+                        <div className={styles.time}>{chapters.duration}</div>
+                      </div>
+                      <div className={styles.iconContainer}>
                         <i className="fas fa-play" />
                       </div>
                     </div>
