@@ -1,0 +1,84 @@
+.container {
+  margin: 10px 5px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .filmContainer {
+    width: 181px;
+    height: 158px;
+    margin: 20px 2px;
+    background-color: #161616;
+    transition: transform 0.3s ease-out;
+
+    .photo {
+      width: 100%;
+      min-height: 122px;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      border-radius: 5px;
+      background-color: #ccc;
+      background-blend-mode: multiply;
+      transition: background-color 0.4s ease-in-out;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    .actions {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .container {
+    margin: 50px 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .filmContainer {
+      width: 218.5px;
+      height: 152px;
+      margin: 20px 2px;
+      background-color: #161616;
+      transition: transform 0.3s ease-out;
+      &:hover {
+        box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transform: scale(1.5);
+        .actions {
+          display: block;
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+        }
+      }
+      .photo {
+        width: 100%;
+        min-height: 122px;
+        background-size: cover;
+        display: block;
+        border-radius: 5px;
+        background-color: #ccc;
+        background-blend-mode: multiply;
+        transition: background-color 0.4s ease-in-out;
+        &:hover {
+          background-color: #fff;
+          border-radius: 5px 5px 0 0;
+        }
+      }
+      .actions {
+        display: none;
+        background: #161616;
+        border-radius: 0 0 5px 5px;
+        color: #fff;
+        width: 100%;
+        height: fit-content;
+        padding: 5px;
+        box-sizing: border-box;
+        transition: opacity 300ms ease-out, border-radius 200ms ease-out;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Texts from "../../components/Texts/index";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "../style.module.scss";
+import Footer from "../../components/Footer";
 function Browser(props) {
   const router = useRouter();
   const { fromBrowser } = props;
@@ -31,6 +32,7 @@ function Browser(props) {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

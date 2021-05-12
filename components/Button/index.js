@@ -3,7 +3,6 @@ import Link from "next/link";
 
 function Button(props) {
   const { text, className, icon, onClick, iconClass } = props;
-
   return (
     <button
       className={`${styles.button} ${styles[className]}`}

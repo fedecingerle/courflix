@@ -97,6 +97,31 @@
   font-size: 20px;
   margin: auto auto;
 }
+.iconGoPlay {
+  text-align: center;
+  color: black;
+  font-size: 10px;
+  margin: auto;
+}
+
+.add {
+  border: 1px solid black;
+  width: auto;
+  color: black;
+  height: 20px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: 300;
+}
+.goPlay {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  padding: 0px;
+  font-weight: 300;
+}
 
 @media (min-width: 750px) {
   .login {

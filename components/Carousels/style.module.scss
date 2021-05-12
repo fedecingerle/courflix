@@ -20,29 +20,24 @@
       transition-timing-function: ease, ease, ease, ease, ease, ease;
       transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
 
-      // &:hover {
-      //   padding: 5px 0;
-      //   width: 255px !important;
-      //   height: 220px;
-      //   background-color: #151515;
-      //   position: relative;
-      //   z-index: 30;
-      //   border: 1px solid transparent;
-      //   border-radius: 10px;
-      //   box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
-      //   transform: scale(1.1);
-      //   transition: max-width 1s, opacity 1s, transform 750ms,
-      //     -webkit-transform 750ms, -moz-transform 750ms, -o-transform 750ms;
-      //   transition-property: max-width, opacity, transform, -webkit-transform,
-      //     -moz-transform, -o-transform;
-      //   transition-duration: 1s, 1s, 750ms, 750ms, 750ms, 750ms;
-      //   transition-timing-function: ease, ease, ease, ease, ease, ease;
-      //   transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
-
-      //   .actions {
-      //     display: block;
-      //   }
-      // }
+      &:hover {
+        padding: 0;
+        width: 255px !important;
+        background-color: #151515;
+        position: relative;
+        z-index: 30;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0/ 10%);
+        transform: scale(1.1);
+        transition: max-width 1s, opacity 1s, transform 750ms,
+          -webkit-transform 750ms, -moz-transform 750ms, -o-transform 750ms;
+        transition-property: max-width, opacity, transform, -webkit-transform,
+          -moz-transform, -o-transform;
+        transition-duration: 1s, 1s, 750ms, 750ms, 750ms, 750ms;
+        transition-timing-function: ease, ease, ease, ease, ease, ease;
+        transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+      }
 
       .filmPhoto {
         position: relative;
@@ -106,6 +101,25 @@
   }
 }
 
+.cursorNext {
+  width: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  bottom: 75px;
+  left: 102%;
+  transform: rotate(180deg);
+}
+
+.cursorPrev {
+  width: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  right: 18px;
+  top: 84px;
+}
+
 @media (min-width: 750px) {
   .carouselContainer {
     top: -6rem;
@@ -121,10 +135,35 @@
       }
     }
   }
+  .cursorNext {
+    width: 20px;
+
+    bottom: 82px;
+    left: 99.5%;
+  }
+
+  .cursorPrev {
+    width: 20px;
+
+    right: 23px;
+    top: 95px;
+  }
 }
 
 @media (min-width: 1200px) {
   .carouselContainer {
     top: -15rem;
+  }
+
+  .cursorNext {
+    width: 30px;
+    bottom: 89px;
+    left: 99.5%;
+  }
+
+  .cursorPrev {
+    width: 30px;
+    right: 18px;
+    top: 100px;
   }
 }

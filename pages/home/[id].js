@@ -6,6 +6,7 @@ import Carousels from "../../components/Carousels";
 import Chapters from "../../components/Chapters";
 import { useState } from "react";
 import { ToggleEpisodesProvider } from "../../context/ToggleEpisodes";
+import Footer from "../../components/Footer";
 
 function Films({ film, tendencie, original }) {
   const { data } = film;
@@ -19,7 +20,6 @@ function Films({ film, tendencie, original }) {
 
   function handleToggle() {
     setToggle(prevState => !prevState);
-    console.log(toggle);
   }
 
   const toggleEpisodesContext = {
@@ -31,13 +31,14 @@ function Films({ film, tendencie, original }) {
     <ToggleEpisodesProvider value={toggleEpisodesContext}>
       <Navbar handleSearch={serchParam => handleSearch(serchParam)} />
       <Banner image={backgroundImage} />
-      {toggle && <Chapters episodes={episodes} data={data} />}
+      {toggle && <Chapters data={data} />}
       <Texts className="banner" image={logo} subtitle={description} />
       <Carousels
         filter={searchParam}
         tendencie={tendencie}
         original={original}
       />
+      <Footer />
     </ToggleEpisodesProvider>
   );
 }

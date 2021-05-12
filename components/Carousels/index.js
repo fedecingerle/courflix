@@ -6,7 +6,6 @@ import Link from "next/link";
 
 function Carousels(props) {
   const { tendencie, original, filter } = props;
-
   function FilmsSlide(props) {
     const { image, title, id } = props;
     return (
@@ -18,13 +17,11 @@ function Carousels(props) {
               style={{ backgroundImage: `url(${image})` }}
             />
           </div>
-          <div className={styles.actions}>
-            <p>{title}</p>
-          </div>
         </div>
       </Link>
     );
   }
+
   function BigSlides(props) {
     const { image, title, _id } = props;
     return (
@@ -38,10 +35,37 @@ function Carousels(props) {
     );
   }
 
+  function ArrowNext(props) {
+    const { style, onClick, cursorNext } = props;
+    return (
+      <>
+        <div
+          className={cursorNext}
+          style={props.left ? { transform: "rotate(180deg)" } : {}}
+          onClick={onClick}
+        >
+          <img className={styles.cursorNext} src="../arrow.svg" />
+        </div>
+      </>
+    );
+  }
+
+  function ArrowPrev(props) {
+    const { style, onClick, cursorPrev } = props;
+    return (
+      <>
+        <div className={cursorPrev} onClick={onClick}>
+          <img className={styles.cursorPrev} src="../arrow.svg" />
+        </div>
+      </>
+    );
+  }
   const settings = {
     slidesToShow: 5,
     slidesToScroll: 1,
     infinite: true,
+    nextArrow: <ArrowNext cursor={styles.cursor} />,
+    prevArrow: <ArrowPrev cursor={styles.cursor} />,
     responsive: [
       {
         breakpoint: 1024,
@@ -115,7 +139,11 @@ function Carousels(props) {
 
   return (
     <div className={styles.carouselContainer}>
-      <TitleCategories categorie="Series" href="/home/series" />
+      <TitleCategories
+        categorie="Tendencias"
+        href="/home/series"
+        className={"titleContainer"}
+      />
       <Slider {...settings} className={styles.slider}>
         {tendencie.data
           .filter(film => {
@@ -131,37 +159,24 @@ function Carousels(props) {
             );
           })}
       </Slider>
-
-      <TitleCategories categorie="Tendencias" href="/home/series" />
-      <Slider
-        {...settings}
-        className={styles.slider}
-        style={{ transform: "none" }}
-      >
-        {tendencie.data
-          .filter(film => {
-            const { title } = film;
-            const lowerTitle = title.toLowerCase();
-            const lowerFilter = filter.toLowerCase();
-            return lowerTitle.includes(lowerFilter);
-          })
-          .map((film, key) => {
-            const { image, title, _id } = film;
-            return (
-              <FilmsSlide key={key} image={image} title={title} id={_id} />
-            );
-          })}
-      </Slider>
-      <TitleCategories categorie="Originales de Courflix" href="/home/series" />
+      <TitleCategories
+        categorie="Originales de Courflix"
+        href="/home/series"
+        className={"titleContainer"}
+      />
       <Slider {...bigSlides} className={styles.slider}>
         {original.data.map((film, key) => {
           const { image, title } = film;
           return <BigSlides key={key} image={image} title={title} />;
         })}
       </Slider>
-      <TitleCategories categorie="Peliculas" href="/home/series" />
+      <TitleCategories
+        categorie="Series"
+        href="/home/series"
+        className={"titleContainer"}
+      />
       <Slider {...settings} className={styles.slider}>
-        {original.data
+        {tendencie.data
           .filter(film => {
             const { title } = film;
             const lowerTitle = title.toLowerCase();

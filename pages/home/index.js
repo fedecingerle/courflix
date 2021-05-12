@@ -1,15 +1,16 @@
-import Head from "next/head";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
 import Texts from "../../components/Texts";
 import Carousels from "../../components/Carousels";
 import { useState } from "react";
 import { ToggleEpisodesProvider } from "../../context/ToggleEpisodes";
 
-function Home({ tendencie, original }) {
+function Home({ tendencie, original, serie }) {
   const [searchParam, setSearchParam] = useState("");
   const [toggle, setToggle] = useState(false);
 
+  console.log(tendencie);
   function handleSearch(searchParam) {
     setSearchParam(searchParam);
   }
@@ -36,12 +37,14 @@ function Home({ tendencie, original }) {
         filter={searchParam}
         tendencie={tendencie}
         original={original}
+        serie={serie}
       />
+      <Footer />
     </ToggleEpisodesProvider>
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataTendencie = await fetch(`http://localhost:3000/api/tendencie`);
   const jsonTendencie = await dataTendencie.json();
 

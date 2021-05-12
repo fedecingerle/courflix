@@ -2,10 +2,10 @@ import styles from "./style.module.scss";
 import Link from "next/link";
 
 function TitleCategories(props) {
-  const { categorie, href } = props;
+  const { categorie, href, className } = props;
   return (
     <Link href={href} passHref>
-      <h2 className={styles.titleContainer}>
+      <h2 className={`${styles[className]}`}>
         <a>
           <div>{categorie}</div>
         </a>

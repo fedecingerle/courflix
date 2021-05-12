@@ -1,3 +1,21 @@
+.commonTitle {
+  color: white;
+  display: flex;
+  font-size: 38px;
+  font-weight: 700;
+  white-space: nowrap;
+  margin: 80px 5px 0;
+  cursor: pointer;
+  a {
+    div {
+      width: 300px;
+    }
+  }
+  .animation {
+    display: none;
+  }
+}
+
 .titleContainer {
   display: flex;
   margin: 20px auto;
@@ -9,6 +27,11 @@
   }
   .animation {
     display: none;
+  }
+}
+@media (min-width: 750px) {
+  .commonTitle {
+    margin: 80px 50px 0;
   }
 }
 

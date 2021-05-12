@@ -47,7 +47,6 @@ function Navbar(props) {
                 <Link href={"/home/films"}>
                   <li>Peliculas</li>
                 </Link>
-                <li>Tendencias</li>
                 <Link href={"/home/myList"}>
                   <li>Mi lista</li>
                 </Link>

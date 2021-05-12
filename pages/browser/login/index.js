@@ -4,6 +4,7 @@ import Navbar from "../../../components/Navbar";
 import BackgroundBanner from "../../../components/BackgroundBanner";
 import styles from "../login/style.module.scss";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 function Login(props) {
   const router = useRouter();
@@ -49,6 +50,7 @@ function Login(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
