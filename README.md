@@ -1,3 +1,17 @@
+Courflix is an App that imitates Netflix. Made with NextJs, Node and Mongo.
+It is advisable to view the desktop version to see more functionalities
+To take a tour of the entire project enter localhost: 3000 / browser, in case you want to do a shorter tour enter localhost / 3000 / home
+To see the different apis created enter localhost: 3000 / api / trends localhost: 3000 / api / original localhost: 3000 / api / film localhost: 3000 / api / serie
+
+Thank you juanigallo and courseit for giving me the knowledge to do it.
+
+Courflix es una App que imita a Netflix. Hecha con NextJs, Node y Mongo. 
+Es recomendable ver en versión desktop para ver mas funcionalidades 
+Para hacer un recorrido de todo el proyecto entrar a localhost:3000/browser, en caso de querer hacer un recorrido mas corto entrar a localhost/3000/home
+Para ver las diferentes apis creadas entrad a localhost:3000/api/tendencie localhost:3000/api/original localhost:3000/api/film localhost:3000/api/serie
+
+Gracias juanigallo y courseit por darme el conocimiento para hacerlo.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
