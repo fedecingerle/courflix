@@ -86,8 +86,12 @@ function Films({ film }) {
 
 export default Films;
 
+//LOCAL http://localhost:3000/api/film
+
 export async function getStaticProps() {
-  const dataFilm = await fetch(`http://localhost:3000/api/film`);
+  const dataFilm = await fetch(
+    `https://courflix.fedecingerle.vercel.app/api/film`
+  );
   const jsonFilm = await dataFilm.json();
   return {
     props: {

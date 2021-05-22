@@ -47,15 +47,27 @@ export default Films;
 
 export async function getServerSideProps({ params }) {
   const { id } = params;
+
+  // PROD https://courflix.fedecingerle.vercel.app/api/tendencie/${id}
+  // LOCAL http://localhost:3000/api/tendencie/${id}
+
   const filmsTendencie = await fetch(
-    `http://localhost:3000/api/tendencie/${id}`
+    `https://courflix.fedecingerle.vercel.app/api/tendencie/${id}`
   );
   const filmsJson = await filmsTendencie.json();
 
-  const dataTendencie = await fetch(`http://localhost:3000/api/tendencie`);
+  // LOCAL http://localhost:3000/api/tendencie
+
+  const dataTendencie = await fetch(
+    `https://courflix.fedecingerle.vercel.app/api/tendencie`
+  );
   const jsonTendencie = await dataTendencie.json();
 
-  const dataOriginal = await fetch(`http://localhost:3000/api/original`);
+  // LOCAL http://localhost:3000/api/original
+
+  const dataOriginal = await fetch(
+    `https://courflix.fedecingerle.vercel.app/api/original`
+  );
   const jsonOriginal = await dataOriginal.json();
   return {
     props: {
