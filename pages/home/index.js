@@ -48,7 +48,7 @@ export async function getServerSideProps() {
   // PROD https://courflix.fedecingerle.vercel.app/api/tendencie
   // LOCAL http://localhost:3000/api/tendencie
   const dataTendencie = await fetch(
-    `https://courflix.fedecingerle.vercel.app/api/tendencie`
+    `https://courflix-fedecingerle.vercel.app/api/tendencie`
   );
   const jsonTendencie = await dataTendencie.json();
 
@@ -56,7 +56,7 @@ export async function getServerSideProps() {
   // LOCAL http://localhost:3000/api/original
 
   const dataOriginal = await fetch(
-    `https://courflix.fedecingerle.vercel.app/api/original`
+    `https://courflix-fedecingerle.vercel.app/api/original`
   );
   const jsonOriginal = await dataOriginal.json();
 

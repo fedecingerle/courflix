@@ -90,7 +90,7 @@ export default Films;
 
 export async function getStaticProps() {
   const dataFilm = await fetch(
-    `https://courflix.fedecingerle.vercel.app/api/film`
+    `https://courflix-fedecingerle.vercel.app/api/film`
   );
   const jsonFilm = await dataFilm.json();
   return {
