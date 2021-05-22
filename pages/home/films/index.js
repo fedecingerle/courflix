@@ -89,7 +89,7 @@ export default Films;
 //LOCAL http://localhost:3000/api/film
 
 export async function getServerSideProps() {
-  const dataFilm = await fetch(`http://localhost/api/film`);
+  const dataFilm = await fetch(`http://localhost:3000/api/film`);
   const jsonFilm = await dataFilm.json();
   return {
     props: {
