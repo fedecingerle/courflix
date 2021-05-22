@@ -88,7 +88,7 @@ export default Films;
 
 //LOCAL http://localhost:3000/api/film
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataFilm = await fetch(
     `https://courflix-fedecingerle.vercel.app/api/film`
   );
