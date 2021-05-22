@@ -47,17 +47,13 @@ function Home({ tendencie, original, serie }) {
 export async function getServerSideProps() {
   // PROD https://courflix.fedecingerle.vercel.app/api/tendencie
   // LOCAL http://localhost:3000/api/tendencie
-  const dataTendencie = await fetch(
-    `https://courflix-fedecingerle.vercel.app/api/tendencie`
-  );
+  const dataTendencie = await fetch(`http://localhost:3000/api/tendencie`);
   const jsonTendencie = await dataTendencie.json();
 
   // PROD https://courflix.fedecingerle.vercel.app/api/original
   // LOCAL http://localhost:3000/api/original
 
-  const dataOriginal = await fetch(
-    `https://courflix-fedecingerle.vercel.app/api/original`
-  );
+  const dataOriginal = await fetch(`http://localhost:3000/api/original`);
   const jsonOriginal = await dataOriginal.json();
 
   return {

@@ -88,9 +88,7 @@ export default Series;
 
 // LOCAL http://localhost:3000/api
 export async function getStaticProps() {
-  const dataSerie = await fetch(
-    `https://courflix-fedecingerle.vercel.app/api/serie`
-  );
+  const dataSerie = await fetch(`http://localhost:3000/api/serie`);
   const jsonSerie = await dataSerie.json();
   return {
     props: {
